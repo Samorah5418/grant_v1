@@ -8,6 +8,7 @@ const routeNotFound = require("./utils/notFound");
 const cloudinary = require("cloudinary").v2;
 const fileUpload = require("express-fileupload");
 const mongoose = require("mongoose");
+const User = require("./models/UserModel");
 
 app.use(cors());
 app.use(express.json());
@@ -19,7 +20,6 @@ cloudinary.config({
 });
 
 app.use(fileUpload({ useTempFiles: true }));
-
 app.use("/", userRoute);
 app.use(routeNotFound);
 
@@ -50,5 +50,10 @@ const startServer = async () => {
     console.error("Error starting server:", error);
   }
 };
+
+
+
+
+
 
 startServer();

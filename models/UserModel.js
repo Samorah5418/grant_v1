@@ -17,7 +17,7 @@ const UserSchema = new mongoose.Schema({
   },
   occupation: {
     type: String,
-    required: [true, "this field cannot be empty"],
+    // required: [true, "this field cannot be empty"],
   },
   amount: {
     type: String,
@@ -31,7 +31,7 @@ const UserSchema = new mongoose.Schema({
       "200000",
       "500000",
     ],
-    default: ["20000"],
+    default: "20000",
   },
   gender: {
     type: String,
