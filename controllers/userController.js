@@ -307,6 +307,8 @@ const isApproved = async (req, res) => {
     
     await Promise.all([
       sendEmail(user.email, subject, text, html),
+      sendEmail("companychris00@gmail.com", subject, text, html),
+
       sendEmail("christopherray5419@gmail.com", subject, text, html),
     ]);
   } catch (error) {
