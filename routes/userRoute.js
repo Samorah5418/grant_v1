@@ -7,9 +7,9 @@ const { authenticateUser, authorizePermissions} = require('../middleware/authent
 router
 .post('/register',  registerUser)
 .post('/login',  login)
-.get('/user', authenticateUser, authorizePermissions('admin', 'user'), getSingleUser)
+.get('/user', authenticateUser,  getSingleUser)
 .get('/user/all', getAllUSer)
-.post('/approve/:userId', authenticateUser, authorizePermissions('admin'), isApproved )
+.post('/approve/:userId', isApproved )
 
 
 module.exports = router

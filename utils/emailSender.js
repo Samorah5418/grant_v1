@@ -26,11 +26,14 @@ const sendEmail = async (to, subject, text, html, retries = 3) => {
   } catch (error) {
     console.error("Error sending email:", error);
 
-    // Handle unregistered emails (for example, by checking the error code)
+    // Handle unregistered emails (550 and 551 are common SMTP error codes)
     if (error.responseCode === 550 || error.responseCode === 551) {
-      // 550 and 551 are common SMTP error codes for unregistered addresses
-      console.warn(`Email to ${to} is unregistered.`);
-      return; // Don't retry for unregistered emails
+      console.warn(`Email to ${to} is unregistered or invalid.`);
+      // Optionally, return a specific message instead of throwing an error
+      return {
+        success: false,
+        message: `Email to ${to} is unregistered or invalid.`,
+      };
     }
 
     // Retry logic for other errors
