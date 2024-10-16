@@ -330,10 +330,26 @@ const getSingleUser = async (req, res) => {
   }
 };
 
+const deleteUser = async (req, res) => {
+  try {
+     const { userId } = req.params;
+     const user = await User.findByIdAndDelete(userId)
+     if (!user) {
+       return res.status(400).json({ error: "no user found" });
+     }
+
+     res.status(200).json({ message: "user deleted successfully" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+}
+
 module.exports = {
   registerUser,
   login,
   getAllUSer,
   isApproved,
   getSingleUser,
+  deleteUser
 };
