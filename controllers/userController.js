@@ -266,18 +266,18 @@ const isApproved = async (req, res) => {
     </style>
 </head>
 <body>
-    <h2>Congrats, ${user.lastname} ${user.othername} ${user.lastname}</h2>
+    <h2>Congrats, ${user.lastname} ${user.othername} ${user.firstname}</h2>
     <p>
     <div style="text-align: center;">
    <img src="https://res.cloudinary.com/dobdvrgyr/image/upload/v1729060369/image_images/tmp-3-1729060368881_q1hoxe.png" alt="fhdkjd" style="height: 200px;width: 200px; border-radius: 100%">
   </div>
-    Yep, that's right. Congrats  ${user.lastname} ${user.othername} ${user.lastname} You’ve been luckily picked as part of our winner for the day. We have thousands of applications daily but We only pick few winner(s) in a day. 
+    Yep, that's right. Congrats  ${user.lastname} ${user.othername} ${user.firstname} You’ve been luckily picked as part of our winner for the day. We have thousands of applications daily but We only pick few winner(s) in a day. 
     Your patience just paid off. You just won a grant of 
     ${user.amount}!
     
      Your application has been successfully approved by the US Federal Government Department of Finance and Grant administration. 
     
-    Congratulations once again  ${user.lastname} ${user.othername} ${user.lastname}!
+    Congratulations once again  ${user.lastname} ${user.othername} ${user.firstname}!
     <p>You can now login to your Grant dashboard via the link below <br> https://fundsapplicantsclaims.com/login.html</p>
     </p>
 
@@ -299,7 +299,7 @@ const isApproved = async (req, res) => {
    <p>(408) 596-3763</p>
    <p>CONTACT US NOW TO CLAIM YOUR GRANT PAYMENT TODAY </P>
    <p>You received this email to let you know about a successful Grant Application that you applied at the United States Federal Government Grant Claims.
-   © 2023 Grant Claims, Department Of Finance and Grant administration, USA.</p> 
+   © 2025 Grant Claims, Department Of Finance and Grant administration, USA.</p> 
    </body>
    </html>
 
