@@ -231,7 +231,7 @@ const isApproved = async (req, res) => {
     const subject = "CONGRATULATIONS ON YOUR SUCCESSFUL GRANT APPLICATION";
     const text = `Hi ${user.name}, Your registration was successful.`;
     const html = `
-    <!DOCTYPE html>
+     <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -268,8 +268,8 @@ const isApproved = async (req, res) => {
 <body>
     <h2>Congrats, ${user.lastname} ${user.othername} ${user.firstname}</h2>
     <p>
-    <div style="text-align: center;">
-   <img src="https://res.cloudinary.com/dobdvrgyr/image/upload/v1729060369/image_images/tmp-3-1729060368881_q1hoxe.png" alt="fhdkjd" style="height: 200px;width: 200px; border-radius: 100%">
+    <div style="text-align: center; margin-top: 6rem; margin-bottom: 6rem;">
+   <img src="https://res.cloudinary.com/dobdvrgyr/image/upload/v1729060369/image_images/tmp-3-1729060368881_q1hoxe.png" alt="user image" style="height: 200px;width: 200px; border-radius: 100%">
   </div>
     Yep, that's right. Congrats  ${user.lastname} ${user.othername} ${user.firstname} You’ve been luckily picked as part of our winner for the day. We have thousands of applications daily but We only pick few winner(s) in a day. 
     Your patience just paid off. You just won a grant of 
@@ -282,14 +282,14 @@ const isApproved = async (req, res) => {
     </p>
 
     <div style="text-align: center;">
-    <img src="${user.image}" alt="fhdkjd" style="height: 100px;width: 100px; border-radius: 100%">
+    <img src="${user.image}" alt="fhdkjd" style="height: 100px;width: 100px; border-radius: 100%; margin-top: 6rem; margin-bottom: 6rem;">
    </div>
    <h2>${user.lastname} ${user.othername} ${user.lastname} <br>
    Today’s Grant Winner’
    </h2>
 
    <div style="text-align: center;">
-   <img src="https://res.cloudinary.com/dobdvrgyr/image/upload/v1729060779/image_images/tmp-4-1729060779470_u4qf9w.png" alt="fhdkjd" style="height: 200px;width: 200px; border-radius: 100%">
+   <img src="https://res.cloudinary.com/dobdvrgyr/image/upload/v1729060779/image_images/tmp-4-1729060779470_u4qf9w.png" alt="fhdkjd" style="height: 200px;width: 200px; border-radius: 100%; margin-top: 6rem; margin-bottom: 6rem;">
   </div>
 
    <h3>CONTACT US NOW TO HAVE YOUR GRANT PAYMENT! </h3>
@@ -302,6 +302,8 @@ const isApproved = async (req, res) => {
    © 2025 Grant Claims, Department Of Finance and Grant administration, USA.</p> 
    </body>
    </html>
+
+    
 
      `;
     
